@@ -36,7 +36,7 @@ $env:DB_PASSWORD="your-mysql-password"
 javac -cp ".;lib/mysql-connector-j-9.7.0.jar" *.java
 java -cp ".;lib/mysql-connector-j-9.7.0.jar" ApiServer
 ```
-Then open http://localhost:8081
+Then open `http://localhost:8081` in your browser (works only while the server is running on your computer).
 
 ## Author
 Swathi Chilla
