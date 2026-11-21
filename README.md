@@ -1,54 +1,42 @@
 # Smart Task Management System
 
-A Java and MySQL based Smart Task Management System developed using JDBC connectivity.
+A task manager built with Java, JDBC and MySQL, with a web interface.
+Tasks are prioritised, so the app always shows what to work on next.
 
 ## Features
+- Add, search, complete and delete tasks
+- Priority levels from 1 (can wait) to 5 (do first)
+- "Next up" panel that shows the highest-priority pending task
+- Progress panel with total, completed and pending counts
 
-* Add Tasks
-* Display Tasks
-* Search Tasks
-* Delete Tasks
-* Complete Tasks
-* Task Analytics
-* Priority-based Task Execution
-* MySQL Database Integration
+## Tech stack
+Java, JDBC, MySQL, HTML/CSS/JavaScript, Java built-in HTTP server
 
-## Technologies Used
+## Project structure
+- `ApiServer.java`: web server and REST API, also serves the frontend
+- `frontend/index.html`: user interface
+- `TaskManager.java`, `Task.java`, `Main.java`: original console version
+- `DBConnection.java`: database connection (password read from `DB_PASSWORD`)
 
-* Java
-* JDBC
-* MySQL
-* SQL
-* Git & GitHub
+## Database
+Database `taskmanager`, table `tasks`:
 
-## Project Structure
-
-* `Main.java` → Main menu and execution
-* `Task.java` → Task model class
-* `TaskManager.java` → Task operations
-* `DBConnection.java` → Database connectivity
-
-## Database Used
-
-MySQL Database:
-
-* Database Name: `taskmanager`
-* Table Name: `tasks`
-
-## How to Run
-
-Compile the project:
-
-```bash
-javac *.java
+```sql
+CREATE TABLE tasks (
+  id INT PRIMARY KEY,
+  name VARCHAR(100),
+  priority INT,
+  status VARCHAR(20)
+);
 ```
 
-Run the project:
-
-```bash
-java -cp ".;lib/mysql-connector-j-9.7.0.jar" Main
+## How to run (Windows PowerShell)
 ```
+$env:DB_PASSWORD="your-mysql-password"
+javac -cp ".;lib/mysql-connector-j-9.7.0.jar" *.java
+java -cp ".;lib/mysql-connector-j-9.7.0.jar" ApiServer
+```
+Then open http://localhost:8081
 
 ## Author
-
 Swathi Chilla
