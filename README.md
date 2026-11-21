@@ -1,4 +1,5 @@
 # Smart Task Management System
+![App screenshot](docs/screenshot.png)
 
 A task manager built with Java, JDBC and MySQL, with a web interface.
 Tasks are prioritised, so the app always shows what to work on next.
