@@ -3,9 +3,9 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 
-    static final String URL = "jdbc:mysql://localhost:3306/taskmanager";
+    static final String URL = "jdbc:mysql://localhost:3306/taskdb";
     static final String USER = "root";
-    static final String PASSWORD = "Vihi18@12345";
+    static final String PASSWORD = System.getenv("DB_PASSWORD");
 
     public static Connection getConnection() {
 
